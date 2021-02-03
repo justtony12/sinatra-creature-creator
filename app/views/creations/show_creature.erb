@@ -1,1 +1,10 @@
 This is where I will see my creations and DELETE them.
+
+<p><%= @creations.name %></p>
+
+<form method="post" action="/creations/<%=@creations.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Creature">
+</form>
+
+<a href="/creations/<%=@creations.id%>/edit">Edit Creature </a>

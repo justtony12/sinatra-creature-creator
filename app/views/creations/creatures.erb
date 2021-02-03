@@ -1,1 +1,16 @@
-This is where I will show all of my creations.
+<p> Welcome, <%= current_user.username %>
+
+<h2> Your Creations </h2>
+
+<% @creations.each do |creature| %>
+  <div>
+    <%= creature.name %>
+    <%= creature.description %>
+    <%= creature.height %>
+    <%= creature.weight %>
+    <%= creature.sex %>
+    <%= creature.temperament %>
+  </div>
+<% end %>
+
+<a href='/creations/new'>Create New Creature</a>

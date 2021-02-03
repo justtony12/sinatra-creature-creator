@@ -1,1 +1,14 @@
-This is where I will create a new Creature.
+<h2> Create a new Creature </h2>
+
+<form action="/creations" method="POST">
+  <p>Name: <input type="text" name="creations[name]"></p>
+  <p>Height: <input type="text" name="creations[height]">ft</p>
+  <p>Weight: <input type="text" name="creations[weight]">lbs</p>
+  <p>Sex: <input type="text" name="creations[sex]"></p>
+  <p>Temperament: <input type="text" name="creations[temperament]"></p>
+  <p>Species: <input type="text" name="creations[species]"></p>
+
+  <p>Description: <textarea name="creations[description]"></textarea></p>
+
+  <input type="submit" value="Create">
+</form>

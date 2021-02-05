@@ -1,6 +1,6 @@
-<p> Here Are All Your Creations, <%= @user.username %>
-<% @user.tweets.each do |tweet| %>
+<p> Here are your creations, <%= @user.username %>
+<% @user.creations.each do |creation| %>
   <div>
-    <%= tweet.content %>
+    <%= creations.name %>
   </div>
 <% end %>

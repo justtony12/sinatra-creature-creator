@@ -5,7 +5,6 @@ class CreateCreatures < ActiveRecord::Migration[5.2]
       t.text :description
       t.decimal :height
       t.decimal :weight
-      t.string :sex
       t.string :temperament
       t.string :species
 

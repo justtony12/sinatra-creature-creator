@@ -1,7 +1,8 @@
 class CreatureController < ApplicationController
+
     get '/creations' do
         if logged_in?
-            @creations = Creations.all
+            @creations = Creation.all
             erb :'creations/creatures'
         else
             redirect to '/login'
@@ -10,7 +11,6 @@ class CreatureController < ApplicationController
 
     get '/creations/new' do
         if logged_in?
-            @creations = Creations.new
             erb :'creations/create_creature'
         else
             redirect to '/login'
@@ -19,14 +19,72 @@ class CreatureController < ApplicationController
 
     post '/creations' do
         if logged_in?
-            redirect to '/creations/#{@creations.id}'
+            if params[:content] == ""
+                redirect to "/creations/new"
+            else
+                @creations = current_user.creations.build(name: params[:name])
+                if @creations.save
+                    redirect to "/creations/#{@creations.id}"
+                else
+                    redirect to "/creations/new"
+                end
+            end
         else
             redirect to '/login'
         end
     end
 
     get '/creations/:id' do
-        @creation = Creations.find(params[:id])
-        erb :'creations/show_creature'
+        if logged_in?
+          @creations = Creation.find_by_id(params[:id])
+          erb :'creations/show_creature'
+        else
+          redirect to '/login'
+        end
     end
+
+    get '/creations/:id/edit' do
+        if logged_in?
+          @creations = Creation.find_by_id(params[:id])
+          if @creations && @creations.user == current_user
+            erb :'creations/edit_creature'
+          else
+            redirect to '/creations'
+          end
+        else
+          redirect to '/login'
+        end
+    end
+
+    patch '/creations/:id' do
+        if logged_in?
+            if params[:name] = ""
+                redirect to '/creations/#{params[:id]}/edit'
+            else
+                @creations = Creation.find_by_id(params[:id])
+                if @creations && @creations.user == current_user
+                    if @creations.update(name: params[:name])
+                        redirect to '/creations/#{@creations.id}/edit'
+                    end
+                else
+                    redirect to '/creations'
+                end
+            end
+        else
+            redirect to '/login'
+        end
+    end
+
+    delete 'creations/:id/delete' do
+        if logged_in?
+            @creations = Creation.find_by_id(params[:id])
+            if @creations && @creations.user == current_user
+                @creations.delete
+            end
+            redirect to '/creations'
+        else
+            redirect to '/login'
+        end
+    end
+
 end

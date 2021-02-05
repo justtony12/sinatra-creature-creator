@@ -5,12 +5,9 @@
 <% @creations.each do |creature| %>
   <div>
     <%= creature.name %>
-    <%= creature.description %>
-    <%= creature.height %>
-    <%= creature.weight %>
-    <%= creature.sex %>
-    <%= creature.temperament %>
-  </div>
+  </div><br>
 <% end %>
 
-<a href='/creations/new'>Create New Creature</a>
+<form method="GET" action="/creations/new">
+    <input type="submit" value="Create New Creature">
+</form>

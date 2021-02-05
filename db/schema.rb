@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2021_02_02_223240) do
     t.text "description"
     t.decimal "height"
     t.decimal "weight"
-    t.string "sex"
     t.string "temperament"
     t.string "species"
     t.integer "user_id"

@@ -3,10 +3,8 @@
 <h2> Your Creations </h2>
 
 <% @creations.each do |creature| %>
-  <ul>
-    <li><%= creature.name %></li>
-  </ul><br>
-<% end %>
+  <h3><%= creature.name %></h3>
+<% end %><br>
 
 <form method="GET" action="/creations/new">
   <input type="submit" value="Create New Creature">

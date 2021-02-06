@@ -3,10 +3,10 @@
 <nav>
     <% if logged_in? %>
 
-        <a href="/creations/new">Create New Creature</a>
-        <a href="/logout">Log Out</a>
-        <p>Welcome, <%=current_user.username %></p>
+        redirect to '/creations'
+
     <% else %>
+
         <p>Sign Up below:</p>
         <form method="GET" action="/signup">
             <input type="submit" value="Sign Up">
@@ -16,5 +16,6 @@
         <form method="GET" action="/login">
             <input type="submit" value="Login">
         </form>
+        
     <% end %>
 </nav>

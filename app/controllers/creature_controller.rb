@@ -58,26 +58,22 @@ class CreatureController < ApplicationController
 
     patch '/creations/:id' do
         if logged_in?
-            if params[:name] = ""
-                redirect to '/creations/#{params[:id]}/edit'
-            else
-                @creations = Creation.find_by_id(params[:id])
-                if @creations && @creations.user == current_user
-                    if @creations.update(name: params[:name])
-                        redirect to '/creations/#{@creations.id}'
-                    else
-                        redirect to '/creations/#{@creations.id}/edit'
-                    end
-                else
+            @creations = Creation.find_by_id(params[:id])
+            if @creations && @creations.user == current_user
+                if @creations.update(name: params[:name])
                     redirect to '/creations'
+                else
+                    redirect to '/creations/#{@creations.id}/edit'
                 end
+            else
+                redirect to '/creations'
             end
         else
             redirect to '/login'
         end
     end
 
-    post '/creations/:id/delete' do
+    delete '/creations/:id/delete' do
         if logged_in?
             @creations = Creation.find_by_id(params[:id])
             if @creations && @creations.user == current_user

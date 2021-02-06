@@ -4,13 +4,13 @@
     <input id='hidden' type='hidden' name='_method' value='PATCH'
 
     <p>Name: <input id="name" type="text" name="name" value="<%= @creations.name %>"></p>
-    <p>Height: <input id="height" type="text" name="height"></p>
-    <p>Weight: <input id="weight" type="text" name="weight"></p>
-    <p>Temperament: <input id="temperament" type="text" name="temperament"></p>
+    <p>Height: <input id="height" type="text" name="height" value="<%= @creations.height %>"></p>
+    <p>Weight: <input id="weight" type="text" name="weight" value="<%= @creations.weight %>"></p>
+    <p>Temperament: <input id="temperament" type="text" name="temperament" value="<%= @creations.temperament %>"></p>
 
-    <p>Species: <input id="species" type="text" name="species"></p>
+    <p>Species: <input id="species" type="text" name="species" value="<%= @creations.species %>"></p>
 
-    <p>Description: <textarea id="description" name="description"></textarea></p>
+    <p>Description: <textarea name="description"><%= @creations.description %></textarea></p>
 
     <input type="submit" value="Submit Changes">
 </form>

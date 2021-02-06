@@ -22,7 +22,7 @@ class CreatureController < ApplicationController
             if params[:content] == ""
                 redirect to "/creations/new"
             else
-                @creations = current_user.creations.build(name: params[:name])
+                @creations = current_user.creations.build(params)
                 if @creations.save
                     redirect to "/creations/#{@creations.id}"
                 else

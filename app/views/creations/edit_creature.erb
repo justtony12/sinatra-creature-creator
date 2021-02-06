@@ -1,7 +1,7 @@
 <h2> Edit your Creature </h2>
 
 <form action="/creations/<%=@creations.id%>" method="POST">
-    <input id='hidden' type='hidden' name='_method' value='PATCH'
+   
 
     <p>Name: <input id="name" type="text" name="name" value="<%= @creations.name %>"></p>
     <p>Height: <input id="height" type="text" name="height" value="<%= @creations.height %>"></p>

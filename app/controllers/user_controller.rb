@@ -42,7 +42,7 @@ class UserController < ApplicationController
         end
     end
 
-    get '/logout' do
+    post '/logout' do
         if logged_in?
             session.destroy
             redirect to '/login'

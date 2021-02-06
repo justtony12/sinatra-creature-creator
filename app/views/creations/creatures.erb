@@ -1,10 +1,12 @@
 <p> Welcome, <%= current_user.username %>
 
-<h2> Your Creations </h2>
+<h2> Creations Library </h2>
 
-<% @creations.each do |creature| %>
-  <h3><%= creature.name %></h3>
-<% end %><br>
+<ul>
+  <% @creations.each do |creature| %>
+    <li><a href="/creations/<%= creature.id %>"><%= creature.name %></a></li>
+  <% end %><br>
+</ul>
 
 <form method="GET" action="/creations/new">
   <input type="submit" value="Create New Creature">

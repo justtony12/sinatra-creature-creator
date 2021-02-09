@@ -56,11 +56,11 @@ class CreatureController < ApplicationController
         end
     end
 
-    post '/creations/:id' do
+    patch '/creations/:id' do
         if logged_in?
             @creations = Creation.find_by_id(params[:id])
             if @creations && @creations.user == current_user
-                if @creations.update(params)
+                if @creations.update(params["creation"])
                     redirect to '/creations'
                 else
                     redirect to '/creations/#{@creations.id}/edit'

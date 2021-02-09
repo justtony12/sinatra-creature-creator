@@ -61,9 +61,9 @@ class CreatureController < ApplicationController
             @creations = Creation.find_by_id(params[:id])
             if @creations && @creations.user == current_user
                 if @creations.update(params["creation"])
-                    redirect to '/creations'
+                    redirect to "/creations/#{@creations.id}"
                 else
-                    redirect to '/creations/#{@creations.id}/edit'
+                    redirect to "/creations/#{@creations.id}/edit"
                 end
             else
                 redirect to '/creations'

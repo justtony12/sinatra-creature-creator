@@ -1,6 +1,6 @@
-<p> Welcome, <%= current_user.username %>
+<h1> Welcome, <%= current_user.username %> </h1><br>
 
-<h2> Creations Library </h2>
+<h2> Public Bestiary </h2>
 
 <ul>
   <% @creations.each do |creature| %>
@@ -9,5 +9,5 @@
 </ul>
 
 <form method="GET" action="/creations/new">
-  <input type="submit" value="Create New Creature">
+  <button type="submit" class="btn btn-secondary">Create New Beast</button>
 </form>

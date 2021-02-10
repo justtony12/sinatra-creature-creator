@@ -1,5 +1,14 @@
 class CreatureController < ApplicationController
 
+    get '/my-creations' do
+        if logged_in?
+            @creations = current_user.creations
+            erb :'creations/my_creatures'
+        else
+            redirect to '/login'
+        end
+    end
+
     get '/creations' do
         if logged_in?
             @creations = Creation.all

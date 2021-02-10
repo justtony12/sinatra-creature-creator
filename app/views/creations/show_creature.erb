@@ -1,17 +1,20 @@
 <h3>Name: <%= @creations.name %></h3>
-<p>Height: <%= @creations.height %></p>
-<p>Weight: <%= @creations.weight %></p>
+<p>Height: <%= @creations.height %> ft</p>
+<p>Weight: <%= @creations.weight %> lbs</p>
 <p>Temperament: <%= @creations.temperament %></p>
 <p>Species: <%= @creations.species %></p>
-<p>Description: <%= @creations.description %></p>
+<p>Description: <%= @creations.description %></p><br>
 
 <% if @creations.user_id == session["user_id"] %>
     <form method="POST" action="/creations/<%=@creations.id%>/delete">
-    <input id="hidden" type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Creature">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="btn btn-dark">Delete</button>
     </form><br>
 
-    <a href="/creations/<%=@creations.id%>/edit">Edit Creature</a>
+    <a class="btn btn-secondary" href="/creations/<%=@creations.id%>/edit"" role="button">Edit Creation</a><br>
+
+<% else %>
+    <p class="text-danger">You can't make changes to this creature</p>
 <% end %>
 
 <br><a href="/creations">Back to all Creations</a><br>

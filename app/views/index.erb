@@ -1,21 +1,12 @@
-<h2>Welcome to Creature Creator!</h2>
+<h1>Welcome to Creature Creator!</h1>
 
-<nav>
-    <% if logged_in? %>
 
-        <%= redirect to '/creations' %>
+<% if logged_in? %>
 
-    <% else %>
+    <%= redirect to '/creations' %>
 
-        <p>Sign Up below:</p>
-        <form method="GET" action="/signup">
-            <input type="submit" value="Sign Up">
-        </form>
+<% else %>
+
+    This is my Home page where I will talk about how awesome my app is!!!
         
-        <p>Login to Your Account:</p>
-        <form method="GET" action="/login">
-            <input type="submit" value="Login">
-        </form>
-        
-    <% end %>
-</nav>
+<% end %>

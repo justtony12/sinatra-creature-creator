@@ -25,18 +25,22 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/my-creations">My Creatures</a>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="/login">Log In</a>
+            <a class="nav-link <%= "disabled" if logged_in? %>" aria-disabled=<%= logged_in? ? "true":"false" %> href="/login">Log In</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/signup">Sign Up</a>
+            <a class="nav-link <%= "disabled" if logged_in? %>" aria-disabled=<%= logged_in? ? "true":"false" %> href="/signup">Sign Up</a>
           </li>
         </ul>
-        <span class="navbar-text">
-          <form method='POST' action='/logout'>
-            <button type="submit" class="btn btn-secondary">Log Out</button>
-          </form><br>
-        </span>
+
+        <% if logged_in? %>
+          <span class="navbar-text">
+            <form method='POST' action='/logout'>
+              <button type="submit" class="btn btn-secondary">Log Out</button>
+            </form><br>
+          </span>
+        <% end %>
       </div>
     </div>
     </nav><br>

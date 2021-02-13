@@ -1,4 +1,4 @@
-<h1>Welcome to Creature Creator!</h1>
+<h1>Welcome to Creature Creator!</h1><br>
 
 
 <% if logged_in? %>
@@ -6,7 +6,8 @@
     <%= redirect to '/creations' %>
 
 <% else %>
+    
+    <h3 class="text-primary">Where you can create and post your wildest creations and store them in a public beastiary for all to enjoy and draw inspiration from!</h3>
+    <h4 class="text-secondary">Lets get started by logging in to your account or creating a new one above!</h4>
 
-    This is my Home page where I will talk about how awesome my app is!!!
-        
 <% end %>

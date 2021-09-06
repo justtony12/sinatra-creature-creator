@@ -9,6 +9,10 @@ class CreatureController < ApplicationController
         end
     end
 
+    get '/about' do
+        erb :about
+    end
+
     get '/creations' do
         if logged_in?
             @creations = Creation.all

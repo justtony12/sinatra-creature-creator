@@ -1,13 +1,15 @@
-<h1>Welcome to Creature Creator!</h1><br>
+<div class='app'>
+    <h1>Welcome to Creature Creator!</h1><br>
 
 
-<% if logged_in? %>
+    <% if logged_in? %>
 
-    <%= redirect to '/creations' %>
+        <%= redirect to '/creations' %>
 
-<% else %>
-    
-    <h3 class="text-primary">Where you can create and post your wildest creations and store them in a public beastiary for all to enjoy and draw inspiration from!</h3>
-    <h4 class="text-secondary">Lets get started by logging in to your account or creating a new one above!</h4>
+    <% else %>
+        
+        <h3>Where you can create and post your wildest creations and store them in a public beastiary for all to enjoy and draw inspiration from!</h3>
+        <h4>Lets get started by logging in to your account or creating a new one above!</h4>
 
-<% end %>
+    <% end %>
+</div>

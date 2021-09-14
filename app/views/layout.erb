@@ -5,54 +5,114 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: black;
+        background-image: url(https://i.pinimg.com/originals/9c/aa/ff/9caaffa4699b7b33964f8fd7999f014d.jpg);
+        background-repeat: no-repeat;
+        position: center;
+        background-size: cover;
+        flex: auto;
+        padding: 50px;
+      }
+      img {
+        width: 70px;
+        height: auto;
+        position: absolute;
+        left: 50px
+      }
+      img:hover {
+        transition: 1s ease-in-out;
+        filter: invert(100%);
+      }
+      button {
+        background-color: rgba(150,0,0);
+        border: solid black;
+        border-radius: 10px;
+        width: 150px;
+        height: 80px;
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
+        font-size: 20px;
+        text-shadow: 2px 2px 5px black;
+        font-family: 'Permanent Marker', cursive;
+        color: white;
+      }
+      button:hover {
+        transition: .5s ease-in-out;
+        background-color: black;
+      }
+      h1 {
+        color: white;
+        text-shadow: 2px 2px 5px red;
+        font-family: 'Roboto Mono', monospace;
+      }
+      h2 {
+        color: white;
+        text-shadow: 2px 2px 5px red;
+        font-family: 'Roboto Mono', monospace;
+      }
+      h3 {
+        color: white;
+        text-shadow: 2px 2px 5px red;
+        font-family: 'Roboto Mono', monospace;
+      }
+      h4 {
+        color: white;
+        text-shadow: 2px 2px 5px red;
+        font-family: 'Roboto Mono', monospace;
+      }
+      p {
+        color: white;
+        text-shadow: 2px 2px 5px red;
+        font-family: 'Roboto Mono', monospace;
+        }
+      a {
+        font-size: 20px;
+        text-shadow: 2px 2px 5px black;
+        font-family: 'Permanent Marker', cursive;
+        color: white;
+      }
+      .NavBar {
+        margin: auto;
+        width: 50%;
+      }
+      .app {
+        margin: auto
+        width: 50%;
+      }
+    </style>
     <title>Creature Creator</title>
   </head>
 
   <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">Creature Creator</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/about">About</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/my-creations">My Creatures</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link <%= "disabled" if logged_in? %>" aria-disabled=<%= logged_in? ? "true":"false" %> href="/login">Log In</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link <%= "disabled" if logged_in? %>" aria-disabled=<%= logged_in? ? "true":"false" %> href="/signup">Sign Up</a>
-          </li>
-        </ul>
+    <a href="/"><img src='https://icon-library.com/images/dnd-icon/dnd-icon-0.jpg' /></a>
+    <nav class="NavBar">
+      <div>
+        <button><a href="/about">About</a></button>
+        <button><a  href="/my-creations">My Creatures</a></button>
+        <button><a href="/login">Log In</a></button>
+        <button><a href="/signup">Sign Up</a></button>
 
         <% if logged_in? %>
-          <span class="navbar-text">
+          <span>
             <form method='POST' action='/logout'>
-              <button type="submit" class="btn btn-secondary">Log Out</button>
+              <button type="submit">Log Out</button>
             </form><br>
           </span>
         <% end %>
+        
       </div>
-    </div>
-    </nav><br>
+    </nav>
 
-    <div class="container">
+    <div class='app'>
+      <%# This is where my app goes. %>
       <%= yield %>
     </div>
-    
 
   </body>
 </html>

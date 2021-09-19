@@ -1,6 +1,6 @@
 # Sinatra Creature Creator
 
-![home page of app](../readmePics/readmeMain.PNG)
+![home page of app](/readmePics/readmeMain.PNG)
 
 This is a simple web application where new users can sign up / log in to their very own secure account and create, update, edit or delete their own creations or view other users creations to draw inpiration from.
 
@@ -20,3 +20,11 @@ Then run 'shotgun' to run the web application on your local host server.
 
 When you start up your sever you will be given a 'http://' link, navigate to that link on your browser.
 
+## Contribution
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what yo would like to change.
+
+## License
+
+[MIT]
+(https://choosealicense.com/licenses/mit/)

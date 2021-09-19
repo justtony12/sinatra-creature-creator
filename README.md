@@ -1,6 +1,6 @@
 # Sinatra Creature Creator
 
-![alt home page of app](/readmePics/readmeMain.PNG)
+![home page of app](readmePics/readmeMain.PNG)
 
 This is a simple web application where new users can sign up / log in to their very own secure account and create, update, edit or delete their own creations or view other users creations to draw inpiration from.
 

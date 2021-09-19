@@ -1,9 +1,11 @@
-# sinatra-creature-creator
+# Sinatra Creature Creator
 
-This is a simple web application where new users can sign up and login in to their secure accounts.
+This is a simple web application where new users can sign up / log in to their very own secure account and create, update, edit or delete their own creations or view other users creations to draw inpiration from.
 
-In this application users can create, read, update and delete their own creations as well as view other users creations.
+## Installation
 
-To download this application go to the link provided: navigate to the top right corner, copy the repo link and paste it into your terminal.
+To download this application navigate to the top right corner of this repo, copy the SSH link and clone it into your terminal.
+
+`git clone git@github.com:justtony12/Pixelgram.git`
 
 Run bundle install to install all required gems and run 'shotgun' to run the web application on your local host server.

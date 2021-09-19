@@ -82,9 +82,15 @@
         width: 50%;
       }
       .app {
-        margin: auto
+        margin: auto;
         width: 50%;
       }
+      .logoutButton {
+        position: absolute;
+        margin-left: 1000px;
+        margin-top: 20px;
+      }
+
     </style>
     <title>Creature Creator</title>
   </head>
@@ -93,23 +99,27 @@
     <a href="/"><img src='https://icon-library.com/images/dnd-icon/dnd-icon-0.jpg' /></a>
     <nav class="NavBar">
       <div>
-        <button><a href="/about">About</a></button>
-        <button><a  href="/my-creations">My Creatures</a></button>
-        <button><a href="/login">Log In</a></button>
-        <button><a href="/signup">Sign Up</a></button>
+        <% if !logged_in? %>
+          <span>
+            <button><a href="/login">Log In</a></button>
+            <button><a href="/signup">Sign Up</a></button>
+          </span>
+        <% end %>
 
         <% if logged_in? %>
           <span>
-            <form method='POST' action='/logout'>
+            <form class='logoutButton' method='POST' action='/logout'>
               <button type="submit">Log Out</button>
             </form><br>
+            <button><a href="/about">About</a></button>
+            <button><a  href="/my-creations">My Creatures</a></button>
           </span>
         <% end %>
         
       </div>
     </nav>
 
-    <div class='app'>
+    <div>
       <%# This is where my app goes. %>
       <%= yield %>
     </div>

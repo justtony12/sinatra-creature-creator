@@ -1,16 +1,18 @@
-<h2> Edit your Creature </h2>
+<div class='app'>
+    <h2> Edit your Creature </h2>
 
-<form action="/creations/<%=@creations.id%>" method="POST">
-<input type="hidden" value="PATCH" name="_method">
+    <form action="/creations/<%=@creations.id%>" method="POST">
+    <input type="hidden" value="PATCH" name="_method">
 
-    <p>Name: <input id="name" type="text" name="creation[name]" value="<%= @creations.name %>"></p>
-    <p>Height: <input id="height" type="text" name="creation[height]" value="<%= @creations.height %>"> ft</p>
-    <p>Weight: <input id="weight" type="text" name="creation[weight]" value="<%= @creations.weight %>"> lbs</p>
-    <p>Temperament: <input id="temperament" type="text" name="creation[temperament]" value="<%= @creations.temperament %>"></p>
+        <p>Name: <input id="name" type="text" name="creation[name]" value="<%= @creations.name %>"></p>
+        <p>Height: <input id="height" type="text" name="creation[height]" value="<%= @creations.height %>"> ft</p>
+        <p>Weight: <input id="weight" type="text" name="creation[weight]" value="<%= @creations.weight %>"> lbs</p>
+        <p>Temperament: <input id="temperament" type="text" name="creation[temperament]" value="<%= @creations.temperament %>"></p>
 
-    <p>Species: <input id="species" type="text" name="creation[species]" value="<%= @creations.species %>"></p>
+        <p>Species: <input id="species" type="text" name="creation[species]" value="<%= @creations.species %>"></p>
 
-    <p>Description: <textarea name="creation[description]"><%= @creations.description %></textarea></p>
+        <p>Description: <textarea name="creation[description]"><%= @creations.description %></textarea></p>
 
-    <button type="submit" class="btn btn-secondary">Submit Changes</button>
-</form>
+        <button type="submit" class="btn btn-secondary">Submit Changes</button>
+    </form>
+</div>
